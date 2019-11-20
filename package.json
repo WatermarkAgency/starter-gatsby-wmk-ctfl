@@ -5,6 +5,7 @@
   "version": "0.3.0",
   "author": "Peter Washington <peter@watermarkadvertising.net>",
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
     "babel-plugin-styled-components": "^1.10.6",
     "bootstrap": "^4.3.1",
     "esm": "^3.2.25",
@@ -15,6 +16,7 @@
     "gatsby-plugin-react-helmet": "^3.1.2",
     "gatsby-plugin-sharp": "^2.2.6",
     "gatsby-plugin-styled-components": "^3.1.11",
+    "gatsby-source-contentful": "^2.1.62",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-source-wordpress": "^3.1.6",
     "gatsby-transformer-sharp": "^2.2.3",
