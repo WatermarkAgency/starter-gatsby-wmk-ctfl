@@ -8,15 +8,11 @@ exports.createPages = ({ graphql, actions }) => {
   const pageTemplate = path.resolve("./src/node/page.js")
   return graphql(`
   {
-    allWordpressPage {
+    allContentfulBasicPages {
       edges {
         node {
-          id
           slug
-          status
-          template
           title
-          content
         }
       }
     }
@@ -26,8 +22,8 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog post pages.
-    result.data.allWordpressPage.edges.forEach(edge => {
+    // Create site pages
+    result.data.allContentfulBasicPages.edges.forEach(edge => {
       createPage({
         // Path for this page — required
         path: `${edge.node.slug}`,
