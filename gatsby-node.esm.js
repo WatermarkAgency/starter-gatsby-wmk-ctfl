@@ -8,7 +8,7 @@ exports.createPages = ({ graphql, actions }) => {
   const pageTemplate = path.resolve("./src/node/page.js")
   return graphql(`
   {
-    allContentfulBasicPages {
+    allContentfulPagesDynamic {
       edges {
         node {
           slug
@@ -23,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create site pages
-    result.data.allContentfulBasicPages.edges.forEach(edge => {
+    result.data.allContentfulPagesDynamic.edges.forEach(edge => {
       createPage({
         // Path for this page — required
         path: `${edge.node.slug}`,
