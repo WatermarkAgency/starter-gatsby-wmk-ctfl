@@ -9,6 +9,7 @@ module.exports = {
     author: `@WatermarkAgency`,
   },
   plugins: [
+    `gatsby-plugin-netlify`,
     /* CONTENTFUL DELIVERY */
     {
       resolve: `gatsby-source-contentful`,
