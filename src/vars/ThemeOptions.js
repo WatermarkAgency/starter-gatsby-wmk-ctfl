@@ -147,10 +147,10 @@ const Theme = new ThemeOptions({
         faq: '/faq/'
   },
   break: {
-    xs: '576px',
-    sm: '768px',
-    md: '992px',
-    lg: '1200px'
+    xs: 576,
+    sm: 768,
+    md: 992,
+    lg: 1200
   }
 });
 
