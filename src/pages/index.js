@@ -3,13 +3,10 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout/MainLayout"
 import Image from "../components/gatsbyImage/image"
-import SEO from "../components/seo/YoastSEO"
-
 import Theme from '../vars/ThemeOptions'
 
 const IndexPage = ({pageContext}) => (
   <Layout>
-    <SEO title="Home" />
     <div style={{background: Theme.hex('secondary')}}>
       {Theme.hex('secondary')}
     </div>
