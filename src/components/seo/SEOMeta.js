@@ -11,18 +11,9 @@ import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 const SEO = ({ description, lang, title, path, slug }) => {
-  const { site } = useStaticQuery(
-    graphql`
-    {
-      site: contentfulGlobalOptions(slug: {eq: "main-options"}) {
-        title: siteTitle
-        baseUrl: siteUrl
-      }
-    }
-    `
-  );
-  const slugVar = !slug || slug === '/' ? "" : slug;
-  const pathVar = !slug || slug === '/' ? "" : path;
+  const { site } = useStaticQuery(query);
+  const slugVar = !slug || slug === "/" ? "" : slug;
+  const pathVar = !slug || slug === "/" ? "" : path;
   return (
     <Helmet
       htmlAttributes={{
@@ -72,15 +63,14 @@ const SEO = ({ description, lang, title, path, slug }) => {
           }
         ] //.concat(meta)
       }
-    >
-    </Helmet>
+    ></Helmet>
   );
 };
 
 SEO.defaultProps = {
   lang: `en`,
   description: ``,
-  path: "/",
+  path: "/"
 };
 
 SEO.propTypes = {
@@ -88,7 +78,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   title: PropTypes.string.isRequired,
   path: PropTypes.string,
-  slug: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired
 };
 
 export default SEO;

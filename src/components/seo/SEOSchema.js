@@ -90,42 +90,4 @@ Schema.propTypes = {
   graphs: PropTypes.array
 };
 
-const query = graphql`
-  query {
-    meta: contentfulGlobalOptions(slug: { eq: "main-options" }) {
-      title: siteTitle
-      baseUrl: siteUrl
-    }
 
-    options: contentfulGlobalOptions(slug: { eq: "main-options" }) {
-      city: addressCity
-      state: addressState
-      street: addressStreet
-      zip: addressZipCode
-      phone: phoneOffice
-      logo: fullLogo {
-        file {
-          url
-        }
-      }
-      email: emailMain
-      social: socialMediaLinks {
-        url
-      }
-    }
-    people: allContentfulWmkPeople(filter: { status: { eq: "Team Member" } }) {
-      edges {
-        node {
-          name
-          jobTitle
-          websiteUrl
-          mainImage {
-            file {
-              url
-            }
-          }
-        }
-      }
-    }
-  }
-`;
