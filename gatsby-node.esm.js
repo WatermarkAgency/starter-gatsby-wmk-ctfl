@@ -25,7 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
   });
   return graphql(`
     {
-      allContentfulPagesDynamic {
+      allContentfulPages {
         edges {
           node {
             slug
