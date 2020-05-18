@@ -3,14 +3,12 @@ import ContentColumns from './contentColumns/contentColumns'
 import SimpleText from './Entry/simpleText'
 import MenuItem from './Entry/menuItem'
 import VideoEmbed from './Entry/videoEmbed'
-import DocumentsEmbed from './Entry/documentsEmbed/documentsEmbed'
 
 const RenderEntry = {
   simpleText: ({ fields }) => <SimpleText fields={fields} />,
   contentColumns: ({ fields }) => <ContentColumns fields={fields} />,
   menuItem: ({fields}) => <MenuItem fields={fields} />,
-  videoEmbed: ({fields}) => <VideoEmbed fields={fields} />,
-  documentsEmbed: ({fields}) => <DocumentsEmbed fields={fields} />
+  videoEmbed: ({fields}) => <VideoEmbed fields={fields} />
 };
 
 export default (node) => {

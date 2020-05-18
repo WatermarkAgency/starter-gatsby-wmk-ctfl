@@ -2,7 +2,7 @@
   "name": "starter-gatsby-wmk",
   "private": true,
   "description": "A barebones WMK Gatsby Starter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Peter Washington <peter@watermarkadvertising.net>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
