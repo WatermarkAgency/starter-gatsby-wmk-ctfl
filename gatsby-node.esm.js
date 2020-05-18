@@ -25,7 +25,7 @@ exports.createPages = ({ graphql, actions }) => {
   });
   return graphql(`
     {
-      allContentfulPages {
+      pages: allContentfulPages {
         edges {
           node {
             slug
@@ -40,7 +40,7 @@ exports.createPages = ({ graphql, actions }) => {
     }
 
     // Create site pages
-    result.data.allContentfulPagesDynamic.edges.forEach(edge => {
+    result.data.pages.edges.forEach(edge => {
       createPage({
         // Path for this page — required
         path: `${edge.node.slug}`,
