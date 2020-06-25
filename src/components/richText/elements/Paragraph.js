@@ -1,6 +1,5 @@
 import React from "react";
-import { buildSlug } from "../ThemeOptions";
-import { locale } from "../baseComponents";
+import { locale } from "../handlers";
 import { WMKLink } from "wmk-lib";
 
 const ApplyMarks = {
@@ -10,6 +9,9 @@ const ApplyMarks = {
   italic: ({ children }) => {
     return <em>{children}</em>;
   },
+  underline: ({children}) => {
+    return <u>{children}</u>
+  }
 };
 
 export const RenderNode = {
@@ -20,36 +22,28 @@ export const RenderNode = {
         if (ApplyMarks[mark.type]) marks.push(ApplyMarks[mark.type]);
       });
     }
-    return marks.length
-      ? marks.map((Mark) => {
-          const randomKey =
-            Math.random()
-              .toString(36)
-              .substring(2, 15) +
-            Math.random()
-              .toString(36)
-              .substring(2, 15);
-          return <Mark key={randomKey}>{node.value}</Mark>;
-        })
-      : node.value;
+    return marks.length ? (
+      marks.map((Mark) => {
+        const randomKey =
+          Math.random()
+            .toString(36)
+            .substring(2, 15) +
+          Math.random()
+            .toString(36)
+            .substring(2, 15);
+        return <Mark key={randomKey}>{node.value}</Mark>;
+      })
+    ) : (
+      node.value
+    );
   },
   "entry-hyperlink": ({ node }) => {
     const { fields } = node.data.target;
-    const slugs = {
-      slug: fields.slug ? fields.slug[locale] : "/",
-      parentPageSlug: fields.parentPageSlug
-        ? fields.parentPageSlug[locale]
-        : null,
-      subParentPageSlug: fields.subParentPageSlug
-        ? fields.subParentPageSlug[locale]
-        : null,
-    };
-    const path = buildSlug(slugs);
     //console.log(fields);
     //const title = fields.title ? fields.title[locale] : <em>title error!</em>
     return (
       <WMKLink
-        to={path}
+        //to={path}
         className="inline"
         label={"Read more about " + fields.title[locale]}
       >
@@ -84,23 +78,27 @@ export const RenderNode = {
   },
 };
 
-export const Paragraph = ({ content }) => (
-  <p>
-    {content.map((p) => {
-      const JSX = RenderNode[p.nodeType];
-      //console.log(p.nodeType);
-      const randomKey =
-        Math.random()
-          .toString(36)
-          .substring(2, 15) +
-        Math.random()
-          .toString(36)
-          .substring(2, 15);
-      return JSX ? (
-        <JSX node={p} key={randomKey} />
-      ) : (
-        <em className="error">Error on: {p.nodeType} in Paragraph</em>
-      );
-    })}
-  </p>
-);
+export const Paragraph = ({ content }) => {
+  const classes = ["timeline-group"]
+  if(content.length === 1 && content[0].marks.length) classes.push('header')
+  return (
+    <p className={classes.join(" ")}>
+      {content.map((p) => {
+        const JSX = RenderNode[p.nodeType];
+        //console.log(p.nodeType);
+        const randomKey =
+          Math.random()
+            .toString(36)
+            .substring(2, 15) +
+          Math.random()
+            .toString(36)
+            .substring(2, 15);
+        return JSX ? (
+          <JSX node={p} key={randomKey} />
+        ) : (
+          <em className="error">Error on: {p.nodeType} in Paragraph</em>
+        );
+      })}
+    </p>
+  )
+};

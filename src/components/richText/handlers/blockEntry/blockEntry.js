@@ -1,17 +1,18 @@
 import React from "react";
-import ContentColumns from './contentColumns/contentColumns'
-import SimpleText from './Entry/simpleText'
-import MenuItem from './Entry/menuItem'
-import VideoEmbed from './Entry/videoEmbed'
+import SimpleText from "./Entry/simpleText";
+import VideoEmbed from "./Entry/videoEmbed";
+import { Row } from "react-bootstrap";
 
 const RenderEntry = {
   simpleText: ({ fields }) => <SimpleText fields={fields} />,
-  contentColumns: ({ fields }) => <ContentColumns fields={fields} />,
-  menuItem: ({fields}) => <MenuItem fields={fields} />,
-  videoEmbed: ({fields}) => <VideoEmbed fields={fields} />
+  videoEmbed: ({ fields }) => (
+    <Row style={{ justifyContent: "center" }}>
+      <VideoEmbed fields={fields} />
+    </Row>
+  ),
 };
 
-export default (node) => {
+export const blockEntry = (node) => {
   const contentType =
     node.data.target.sys &&
     node.data.target.sys.contentType &&
@@ -24,4 +25,3 @@ export default (node) => {
     <em className="error">Error loading entry. {contentType}</em>
   );
 };
-

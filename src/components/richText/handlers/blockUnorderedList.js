@@ -1,7 +1,7 @@
 import React from "react";
 import { BaseComps } from "./baseComponents";
 
-export default (node) => {
+export const blockUnorderedList = (node) => {
   const { content } = node;
   return (
     content && (

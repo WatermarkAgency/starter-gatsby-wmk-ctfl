@@ -1,5 +1,4 @@
 import React from "react";
-import BulletDrop from "../../components/flexible/blocks/BlockBody/Bullets/BulletDrop";
 import { Row, Col } from "react-bootstrap";
 import { Paragraph } from "../elements/Paragraph";
 import styled from "styled-components";
@@ -40,7 +39,7 @@ export const BaseComps = {
       <li className="droplet">
         <Row>
           <Col xs="auto" sm="auto">
-            <BulletDrop />
+            bull
           </Col>
           <Col>
             {content.map((el, i) => {
@@ -55,7 +54,9 @@ export const BaseComps = {
               return JSX ? (
                 <JSX key={el.nodeType + i} content={el.content} />
               ) : (
-                <em className="error">Nested list-item node error: {el.nodeType}</em>
+                <em className="error">
+                  Nested list-item node error: {el.nodeType}
+                </em>
               );
             })}
           </Col>

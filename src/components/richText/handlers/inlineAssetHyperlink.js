@@ -1,8 +1,8 @@
 import React from "react";
 import { WMKLink } from "wmk-lib";
-import {locale} from './baseComponents'
+import { locale } from "./"
 
-export default (node, children) => {
+export const inlineAssetHyperlink = (node, children) => {
   const { nodeType, data } = node;
   const url = data.target.fields.file[locale].url;
   let JSX = null;

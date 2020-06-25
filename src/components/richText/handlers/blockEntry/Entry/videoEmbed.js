@@ -1,5 +1,5 @@
 import React from "react";
-import { locale } from "../../baseComponents";
+import { locale } from "../../"
 import getVideoId from "get-video-id";
 
 export default ({ fields }) => {
