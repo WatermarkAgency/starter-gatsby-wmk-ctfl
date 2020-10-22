@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "prettier": "^1.19.1",
-    "wmk-color-palette": "^0.1.4"
+    "wmk-color-palette": "^0.1.5"
   },
   "keywords": [
     "gatsby"
