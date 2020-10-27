@@ -2,7 +2,7 @@
   "name": "starter-gatsby-wmk",
   "private": true,
   "description": "A barebones WMK Gatsby Starter",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "author": "Peter Washington <peter@watermarkadvertising.net>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^13.4.0",
@@ -26,12 +26,12 @@
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^5.2.1",
-    "styled-components": "^4.4.1",
-    "wmk-lib": "^1.17.3"
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "prettier": "^1.19.1",
-    "wmk-color-palette": "^0.1.5"
+    "wmk-color-palette": "^0.1.6",
+    "wmk-lib": "^1.17.3"
   },
   "keywords": [
     "gatsby"
