@@ -1,12 +1,11 @@
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
-import React from "react";
-import { colors } from "../../../vars/palette";
+import * as React from "react"
+import PropTypes from "prop-types"
+import { Link } from "gatsby"
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `${colors.hex("accent")}`,
+      background: `rebeccapurple`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -21,7 +20,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: colors.hex("white"),
+            color: `white`,
             textDecoration: `none`,
           }}
         >
@@ -30,14 +29,14 @@ const Header = ({ siteTitle }) => (
       </h1>
     </div>
   </header>
-);
+)
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-};
+}
 
 Header.defaultProps = {
   siteTitle: ``,
-};
+}
 
-export default Header;
+export default Header
