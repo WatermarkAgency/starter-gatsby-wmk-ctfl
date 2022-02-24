@@ -18,6 +18,7 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    // Uncomment if using Contentful Preview API
     /* CONTENTFUL PREVIEW API */
     // {
     //   resolve: `gatsby-source-contentful`,
@@ -27,9 +28,29 @@ module.exports = {
     //     host: `preview.contentful.com`,
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-    },
+   `gatsby-plugin-styled-components`,
+   // Uncomment & configure .env file to use Google Tag Manager
+   /*
+   {
+    resolve: "gatsby-plugin-google-tagmanager",
+    options: {
+      id: process.env.GOOGLE_TAGMANAGER_ID,
+      includeInDevelopment: false,
+      defaultDataLayer: { platform: "gatsby" }
+    }
+  },
+  */
+
+// Uncomment & configure to use Google Fonts
+/*
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [`poppins\:300,400,400i,500,600,700i`, `ibm plex sans\:400,500,600,700`],
+      display: "swap"
+    }
+  },
+  */
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -44,6 +65,7 @@ module.exports = {
       //   // Add any options here
       // },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
