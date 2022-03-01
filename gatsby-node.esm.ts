@@ -1,10 +1,10 @@
+ /* uncomment / modify once data & queries are ready
 import path from "path";
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
  // const pageTemplate = path.resolve("./src/node/page.tsx");
 
- /* uncomment / modify once data & queries are ready
   return graphql(`
     {
       pages: allContentfulPage {
@@ -39,6 +39,7 @@ exports.createPages = ({ graphql, actions }) => {
     });
 
     
-  });*/
+  });
 };
+*/
 

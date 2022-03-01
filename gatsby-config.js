@@ -1,12 +1,13 @@
-require('dotenv').config({
-  path: '.env'
-})
+require("dotenv").config({
+  path: ".env",
+});
 
 module.exports = {
   siteMetadata: {
     title: `WMK Gatsby Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@WatermarkAgency`,
+    baseUrl: `https://wmkagency.com`, // point to primary URL of production site
   },
   plugins: [
     `gatsby-plugin-netlify`,
@@ -28,9 +29,9 @@ module.exports = {
     //     host: `preview.contentful.com`,
     //   },
     // },
-   `gatsby-plugin-styled-components`,
-   // Uncomment & configure .env file to use Google Tag Manager
-   /*
+    `gatsby-plugin-styled-components`,
+    // Uncomment & configure .env file to use Google Tag Manager
+    /*
    {
     resolve: "gatsby-plugin-google-tagmanager",
     options: {
@@ -41,8 +42,8 @@ module.exports = {
   },
   */
 
-// Uncomment & configure to use Google Fonts
-/*
+    // Uncomment & configure to use Google Fonts
+    /*
   {
     resolve: `gatsby-plugin-google-fonts`,
     options: {
@@ -84,4 +85,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
