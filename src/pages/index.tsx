@@ -1,9 +1,9 @@
 import * as React from "react";
-import Layout from "../components/layout/MainLayout";
 import { Container, Row, Col } from "react-bootstrap";
 import { graphql } from "gatsby";
 import { SiteMetaDataFields } from "../fragments/NodeSiteMetadataFields";
 import { WmkSeo } from "wmk-seo";
+import Layout from "../components/layout/MainLayout";
 
 const IndexPage = ({ data }: { data: IndexPageQuery }) => (
   <Layout>

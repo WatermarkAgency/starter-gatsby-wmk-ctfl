@@ -1,10 +1,16 @@
 import * as React from "react";
 import { MainLayout, Sticky } from "wmk-layout";
-
 import Header from "./Header";
 import Footer from "./Footer";
 
-const Layout = ({ children }: { children: React.ReactChild }) => {
+/* Feed this to your header and/or footer once data is queried */
+import { MenuData, HyperLink } from "wmk-menu";
+
+const Layout = ({
+  children
+}: {
+  children: React.ReactChild | React.ReactChild[];
+}) => {
   return (
     <MainLayout
       Header={() => (
