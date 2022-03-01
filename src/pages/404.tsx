@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import styled from "styled-components";
 import Layout from "../components/layout/MainLayout";
 import { WmkSeo } from "wmk-seo";

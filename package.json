@@ -33,6 +33,7 @@
     "react-markdown": "8.0.0",
     "styled-components": "^5.3.3",
     "wmk-image": "^1.0.15",
+    "wmk-layout": "^1.0.2",
     "wmk-link": "^1.0.6",
     "wmk-menu": "^1.0.9",
     "wmk-netlify-form": "^1.2.0",
