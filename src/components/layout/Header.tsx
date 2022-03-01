@@ -1,40 +1,26 @@
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
+import { WmkLink } from "wmk-link";
 import * as React from "react";
-import { colors } from "../../vars/palette";
+import { colors } from "../ui/colors";
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `${colors.hex("accent")}`,
-      marginBottom: `1.45rem`
-    }}>
+const Header = () => (
+  <header>
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
         padding: `1.45rem 1.0875rem`
       }}>
       <h1 style={{ margin: 0 }}>
-        <Link
+        <WmkLink
           to="/"
           style={{
-            color: colors.hex("white"),
+            color: colors.primary.getHex(),
             textDecoration: `none`
           }}>
-          {siteTitle}
-        </Link>
+          Header Goes Here
+        </WmkLink>
       </h1>
     </div>
   </header>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string
-};
-
-Header.defaultProps = {
-  siteTitle: ``
-};
 
 export default Header;
