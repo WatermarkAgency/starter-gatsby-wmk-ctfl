@@ -1,5 +1,4 @@
 import * as React from "react";
-import Layout from "../components/layout/MainLayout";
 
 /* Don't forget about setting up SEO dynamically */
 import { WmkSeo } from "wmk-seo";
@@ -9,7 +8,7 @@ export default () =>
   { pageContext, data }
 */
   {
-    return <Layout>Page Content Here</Layout>;
+    return <>Page Content Here</>;
   };
 
 /* SAMPLE DYNAMIC PAGE QUERY 

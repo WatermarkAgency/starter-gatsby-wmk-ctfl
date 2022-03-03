@@ -1,9 +1,10 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
-
-// You can delete this file if you're not using it
 import "./node_modules/bootstrap/dist/css/bootstrap.css";
-import "./node_modules/wmk-lib/dist/index.css";
+import Layout from "./src/components/layout/MainLayout";
+import * as React from "react";
+import type { GatsbyBrowser } from "gatsby";
+
+export const wrapPageElement: GatsbyBrowser["wrapPageElement"] = ({
+  element
+}) => {
+  return <Layout>{element}</Layout>;
+};

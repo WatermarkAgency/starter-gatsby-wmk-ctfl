@@ -3,10 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import { graphql } from "gatsby";
 import { SiteMetaDataFields } from "../fragments/NodeSiteMetadataFields";
 import { WmkSeo } from "wmk-seo";
-import Layout from "../components/layout/MainLayout";
 
 const IndexPage = ({ data }: { data: IndexPageQuery }) => (
-  <Layout>
+  <>
     <WmkSeo.Meta
       title={"Home"}
       siteTitle={data.site.siteMetadata.title}
@@ -18,7 +17,7 @@ const IndexPage = ({ data }: { data: IndexPageQuery }) => (
         <Col>Index Page Code Here</Col>
       </Row>
     </Container>
-  </Layout>
+  </>
 );
 
 export default IndexPage;

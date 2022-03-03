@@ -13,7 +13,7 @@ const Wrap = styled.div`
 `;
 
 const NotFoundPage = ({ data }: { data: NotFoundPageQuery }) => (
-  <Layout>
+  <>
     <WmkSeo.Meta
       title="404: Page Not Found"
       siteTitle={data.site.siteMetadata.title}
@@ -24,7 +24,7 @@ const NotFoundPage = ({ data }: { data: NotFoundPageQuery }) => (
       <h1>404 NOT FOUND</h1>
       <p>You just hit a route that doesn&#39;t exist.</p>
     </Wrap>
-  </Layout>
+  </>
 );
 
 export default NotFoundPage;

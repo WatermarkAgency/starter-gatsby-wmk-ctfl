@@ -12,13 +12,14 @@ module.exports = {
   plugins: [
     `gatsby-plugin-netlify`,
     /* CONTENTFUL DELIVERY */
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
-    },
+    // Uncomment once content API data is setup in .env
+    // {
+    //   resolve: `gatsby-source-contentful`,
+    //   options: {
+    //     spaceId: process.env.CONTENTFUL_SPACE_ID,
+    //     accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+    //   },
+    // },
     // Uncomment if using Contentful Preview API
     /* CONTENTFUL PREVIEW API */
     // {
