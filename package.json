@@ -33,6 +33,7 @@
     "react-helmet": "6.1.0",
     "react-icons": "^4.3.1",
     "react-markdown": "8.0.0",
+    "react-player": "^2.9.0",
     "styled-components": "^5.3.3",
     "ts-color-class": "^0.10.1",
     "wmk-image": "^1.0.15",
@@ -40,7 +41,7 @@
     "wmk-link": "^1.0.6",
     "wmk-menu": "^1.0.9",
     "wmk-netlify-form": "^1.2.0",
-    "wmk-rich-text": "^1.2.1",
+    "wmk-rich-text": "^2.1.7",
     "wmk-seo": "^1.0.3"
   },
   "devDependencies": {
