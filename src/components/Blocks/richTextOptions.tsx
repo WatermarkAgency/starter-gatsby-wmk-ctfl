@@ -4,14 +4,14 @@ import { Fade } from "react-awesome-reveal";
 import { WmkImage, Img, ContentfulImageQuery } from "wmk-image";
 import ReactPlayer from "react-player";
 import { Typography } from "../ui/Typography";
-import { EmbeddedBlock, RichTextTopLeveBlock } from "wmk-rich-text";
+import { EmbeddedBlock, RichTextTopLevelBlock } from "wmk-rich-text";
 import { blockHash } from "./BlockHash";
 
 const NullComp = () => <></>;
 
 export const options = {
   renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node: RichTextTopLeveBlock) => {
+    [BLOCKS.EMBEDDED_ASSET]: (node: RichTextTopLevelBlock) => {
       const image = node?.reference?.data as ContentfulImageQuery;
       const type = image?.file?.contentType;
       const url = image?.file?.url;
@@ -34,7 +34,7 @@ export const options = {
     ) => {
       return <Typography.P>{children}</Typography.P>;
     },
-    [BLOCKS.EMBEDDED_ENTRY]: (node: RichTextTopLeveBlock) => {
+    [BLOCKS.EMBEDDED_ENTRY]: (node: RichTextTopLevelBlock) => {
       const entry = new EmbeddedBlock(node, blockHash);
       return entry.render();
     },

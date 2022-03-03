@@ -6,3 +6,4 @@ export const colors = {
   white: new Color("#fefefe"),
   black: new Color("#3a3a3a")
 };
+

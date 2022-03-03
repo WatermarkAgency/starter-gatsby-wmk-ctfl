@@ -2,7 +2,7 @@
   "name": "wmk-gatsby-starter-ctfl",
   "private": true,
   "description": "A barebones WMK Gatsby/Contentful Starter",
-  "version": "4.9.0",
+  "version": "4.9.1",
   "author": "Peter Washington <peter@watermarkagency.com>",
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.11.1",
@@ -39,7 +39,7 @@
     "wmk-link": "^1.0.6",
     "wmk-menu": "^1.0.9",
     "wmk-netlify-form": "^1.2.0",
-    "wmk-rich-text": "^2.1.7",
+    "wmk-rich-text": "^2.1.8",
     "wmk-seo": "^1.0.3"
   },
   "devDependencies": {

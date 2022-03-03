@@ -11,6 +11,14 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-netlify`,
+    // {
+    //   resolve: "gatsby-plugin-robots-txt",
+    //   options: {
+    //     host: site.siteMetadata.baseUrl,
+    //     sitemap: `${site.siteMetadata.baseUrl}/sitemap.xml`,
+    //     policy: [{ userAgent: "*", allow: "/" }]
+    //   }
+    // },
     /* CONTENTFUL DELIVERY */
     // Uncomment once content API data is setup in .env
     // {
