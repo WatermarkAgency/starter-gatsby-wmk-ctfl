@@ -4,14 +4,14 @@ import { Fade } from "react-awesome-reveal";
 import { WmkImage, Img, ContentfulImageQuery } from "wmk-image";
 import ReactPlayer from "react-player";
 import { Typography } from "../ui/Typography";
-import { EmbeddedBlock, RichTextTopLevelBlock } from "wmk-rich-text";
+import { EmbeddedBlock, RichTextNode } from "wmk-rich-text";
 import { blockHash } from "./BlockHash";
 
 const NullComp = () => <></>;
 
 export const options = {
   renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node: RichTextTopLevelBlock) => {
+    [BLOCKS.EMBEDDED_ASSET]: (node: RichTextNode) => {
       const image = node?.reference?.data as ContentfulImageQuery;
       const type = image?.file?.contentType;
       const url = image?.file?.url;
@@ -28,79 +28,59 @@ export const options = {
         <NullComp />
       );
     },
-    [BLOCKS.PARAGRAPH]: (
-      //node: RichTextTopLeveBlock,
-      children: React.ReactChild
-    ) => {
-      return <Typography.P>{children}</Typography.P>;
+    [BLOCKS.PARAGRAPH]: (node: RichTextNode, children: React.ReactNode) => {
+      console.log(node);
+      return <Typography.P>{children as React.ReactChild}</Typography.P>;
     },
-    [BLOCKS.EMBEDDED_ENTRY]: (node: RichTextTopLevelBlock) => {
+    [BLOCKS.EMBEDDED_ENTRY]: (node: RichTextNode) => {
       const entry = new EmbeddedBlock(node, blockHash);
       return entry.render();
     },
-    [BLOCKS.HEADING_1]: (
-      //node: RichTextTopLeveBlock,
-      children: React.ReactChild
-    ) => {
-      //console.log(node);
+    [BLOCKS.HEADING_1]: (node: RichTextNode, children: React.ReactNode) => {
+      console.log(node);
       return (
         <Fade direction="up">
-          <Typography.H1>{children}</Typography.H1>
+          <Typography.H1>{children as React.ReactChild}</Typography.H1>
         </Fade>
       );
     },
-    [BLOCKS.HEADING_2]: (
-      //node: RichTextTopLeveBlock,
-      children: React.ReactChild
-    ) => {
-      //console.log(node);
+    [BLOCKS.HEADING_2]: (node: RichTextNode, children: React.ReactNode) => {
+      console.log(node);
       return (
         <Fade direction="up">
-          <Typography.H2>{children}</Typography.H2>
+          <Typography.H2>{children as React.ReactChild}</Typography.H2>
         </Fade>
       );
     },
-    [BLOCKS.HEADING_3]: (
-      //node: RichTextTopLeveBlock,
-      children: React.ReactChild
-    ) => {
-      //console.log(node);
+    [BLOCKS.HEADING_3]: (node: RichTextNode, children: React.ReactNode) => {
+      console.log(node);
       return (
         <Fade direction="up">
-          <Typography.H3>{children}</Typography.H3>
+          <Typography.H3>{children as React.ReactChild}</Typography.H3>
         </Fade>
       );
     },
-    [BLOCKS.HEADING_4]: (
-      //node: RichTextTopLeveBlock,
-      children: React.ReactChild
-    ) => {
-      //console.log(node);
+    [BLOCKS.HEADING_4]: (node: RichTextNode, children: React.ReactNode) => {
+      console.log(node);
       return (
         <Fade>
-          <Typography.H4>{children}</Typography.H4>
+          <Typography.H4>{children as React.ReactChild}</Typography.H4>
         </Fade>
       );
     },
-    [BLOCKS.HEADING_5]: (
-      //node: RichTextTopLeveBlock,
-      children: React.ReactChild
-    ) => {
-      //console.log(node);
+    [BLOCKS.HEADING_5]: (node: RichTextNode, children: React.ReactNode) => {
+      console.log(node);
       return (
         <Fade>
-          <Typography.H5>{children}</Typography.H5>
+          <Typography.H5>{children as React.ReactChild}</Typography.H5>
         </Fade>
       );
     },
-    [BLOCKS.HEADING_6]: (
-      //node: RichTextTopLeveBlock,
-      children: React.ReactChild
-    ) => {
-      //console.log(node);
+    [BLOCKS.HEADING_6]: (node: RichTextNode, children: React.ReactNode) => {
+      console.log(node);
       return (
         <Fade>
-          <Typography.H6>{children}</Typography.H6>
+          <Typography.H6>{children as React.ReactChild}</Typography.H6>
         </Fade>
       );
     }
