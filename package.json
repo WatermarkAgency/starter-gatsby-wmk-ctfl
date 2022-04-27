@@ -33,7 +33,8 @@
     "react-markdown": "^8.0.2",
     "react-player": "^2.10.0",
     "styled-components": "^5.3.5",
-    "ts-color-class": "^0.10.1"
+    "ts-color-class": "^0.10.1",
+    "wmk-ui": "^0.3.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.25",
@@ -44,8 +45,8 @@
     "prettier": "^2.6.2",
     "typescript": "^4.6.3",
     "wmk-image": "^1.1.2",
-    "wmk-layout": "^1.0.2",
-    "wmk-link": "^1.0.6",
+    "wmk-layout": "^1.0.3",
+    "wmk-link": "^1.1.2",
     "wmk-menu": "^2.0.0",
     "wmk-netlify-form": "^1.2.0",
     "wmk-rich-text": "^2.3.2",

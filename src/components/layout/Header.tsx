@@ -2,8 +2,8 @@ import { WmkLink } from "wmk-link";
 import * as React from "react";
 import { colors } from "../ui/colors";
 
-const Header = () => (
-  <header>
+const Header = () => {
+  return (
     <div
       style={{
         margin: `0 auto`,
@@ -20,7 +20,7 @@ const Header = () => (
         </WmkLink>
       </h1>
     </div>
-  </header>
-);
+  );
+};
 
 export default Header;

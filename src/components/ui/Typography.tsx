@@ -1,8 +1,19 @@
 import * as React from "react";
 import CSS from "csstype";
 
+export enum TYPE {
+  H1 = "Heading1",
+  H2 = "Heading2",
+  H3 = "Heading3",
+  H4 = "Heading4",
+  H5 = "Heading5",
+  H6 = "Heading6",
+  P = "Paragraph",
+  Quote = "BlockQuote"
+}
+
 export const Typography = {
-  H1: React.forwardRef(
+  [TYPE.H1]: React.forwardRef(
     (
       {
         children,
@@ -15,7 +26,7 @@ export const Typography = {
       </h1>
     )
   ),
-  H2: React.forwardRef(
+  [TYPE.H2]: React.forwardRef(
     (
       {
         children,
@@ -28,7 +39,7 @@ export const Typography = {
       </h2>
     )
   ),
-  H3: React.forwardRef(
+  [TYPE.H3]: React.forwardRef(
     (
       {
         children,
@@ -41,7 +52,7 @@ export const Typography = {
       </h3>
     )
   ),
-  H4: React.forwardRef(
+  [TYPE.H4]: React.forwardRef(
     (
       {
         children,
@@ -54,7 +65,7 @@ export const Typography = {
       </h4>
     )
   ),
-  H5: React.forwardRef(
+  [TYPE.H5]: React.forwardRef(
     (
       {
         children,
@@ -67,7 +78,7 @@ export const Typography = {
       </h5>
     )
   ),
-  H6: React.forwardRef(
+  [TYPE.H6]: React.forwardRef(
     (
       {
         children,
@@ -80,7 +91,7 @@ export const Typography = {
       </h6>
     )
   ),
-  P: React.forwardRef(
+  [TYPE.P]: React.forwardRef(
     (
       {
         children,
@@ -93,7 +104,7 @@ export const Typography = {
       </div>
     )
   ),
-  BLOCKQUOTE: React.forwardRef(
+  [TYPE.Quote]: React.forwardRef(
     (
       {
         children,

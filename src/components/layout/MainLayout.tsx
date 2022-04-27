@@ -13,15 +13,15 @@ const Layout = ({
 }) => {
   return (
     <MainLayout
-      Header={() => (
+      Header={
         <Sticky>
           {/* this way you can pass query 
             data to this comp. Turn footer into named or 
             anonymous function to do the same*/}
           <Header />
         </Sticky>
-      )}
-      Footer={Footer}>
+      }
+      Footer={<Footer />}>
       {children}
     </MainLayout>
   );
