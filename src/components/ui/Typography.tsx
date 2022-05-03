@@ -1,5 +1,4 @@
 import * as React from "react";
-import CSS from "csstype";
 
 export const Typography = {
   H1: React.forwardRef(
@@ -7,7 +6,7 @@ export const Typography = {
       {
         children,
         style
-      }: { children: React.ReactChild; style?: CSS.Properties },
+      }: { children: React.ReactNode; style?: React.CSSProperties },
       ref: React.ForwardedRef<HTMLHeadingElement>
     ) => (
       <h1 style={style} ref={ref}>
@@ -20,7 +19,7 @@ export const Typography = {
       {
         children,
         style
-      }: { children: React.ReactChild; style?: CSS.Properties },
+      }: { children: React.ReactNode; style?: React.CSSProperties },
       ref: React.ForwardedRef<HTMLHeadingElement>
     ) => (
       <h2 style={style} ref={ref}>
@@ -33,7 +32,7 @@ export const Typography = {
       {
         children,
         style
-      }: { children: React.ReactChild; style?: CSS.Properties },
+      }: { children: React.ReactNode; style?: React.CSSProperties },
       ref: React.ForwardedRef<HTMLHeadingElement>
     ) => (
       <h3 style={style} ref={ref}>
@@ -46,7 +45,7 @@ export const Typography = {
       {
         children,
         style
-      }: { children: React.ReactChild; style?: CSS.Properties },
+      }: { children: React.ReactNode; style?: React.CSSProperties },
       ref: React.ForwardedRef<HTMLHeadingElement>
     ) => (
       <h4 style={style} ref={ref}>
@@ -59,7 +58,7 @@ export const Typography = {
       {
         children,
         style
-      }: { children: React.ReactChild; style?: CSS.Properties },
+      }: { children: React.ReactNode; style?: React.CSSProperties },
       ref: React.ForwardedRef<HTMLHeadingElement>
     ) => (
       <h5 style={style} ref={ref}>
@@ -72,7 +71,7 @@ export const Typography = {
       {
         children,
         style
-      }: { children: React.ReactChild; style?: CSS.Properties },
+      }: { children: React.ReactNode; style?: React.CSSProperties },
       ref: React.ForwardedRef<HTMLHeadingElement>
     ) => (
       <h6 style={style} ref={ref}>
@@ -85,7 +84,7 @@ export const Typography = {
       {
         children,
         style
-      }: { children: React.ReactChild; style?: CSS.Properties },
+      }: { children: React.ReactNode; style?: React.CSSProperties },
       ref: React.ForwardedRef<HTMLDivElement>
     ) => (
       <div style={style} ref={ref}>
@@ -98,7 +97,7 @@ export const Typography = {
       {
         children,
         style
-      }: { children: React.ReactChild; style?: CSS.Properties },
+      }: { children: React.ReactNode; style?: React.CSSProperties },
       ref: React.ForwardedRef<HTMLQuoteElement>
     ) => (
       <blockquote style={style} ref={ref}>

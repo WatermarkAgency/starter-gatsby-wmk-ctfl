@@ -9,7 +9,7 @@ import { MenuData, HyperLink } from "wmk-menu";
 const Layout = ({
   children
 }: {
-  children: React.ReactChild | React.ReactChild[];
+  children: React.ReactNode | React.ReactNode[];
 }) => {
   return (
     <MainLayout
