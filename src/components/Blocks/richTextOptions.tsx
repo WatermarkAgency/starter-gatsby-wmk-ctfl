@@ -4,66 +4,57 @@ import { Fade } from "react-awesome-reveal";
 import { WmkImage, Img, ContentfulImageQuery } from "wmk-image";
 import ReactPlayer from "react-player";
 import { Typography } from "../ui/Typography";
-import { EmbeddedBlock, RichTextInline, RichTextNode } from "wmk-rich-text";
+import {
+  blocksEmbeddedAsset,
+  blocksTypography,
+  EmbeddedBlock,
+  getRichTextOptions,
+  RichTextChildren,
+  RichTextInline,
+  RichTextNode
+} from "wmk-rich-text";
 import { blockHash } from "./BlockHash";
 import { WmkLink } from "wmk-link";
 
 const NullComp = () => <></>;
 
-export const options = {
+const blocksEmbeddedAssetTest = (
+  node: RichTextNode,
+  Component?: React.FunctionComponent<{
+    asset: ContentfulImageQuery;
+    contentType: string;
+  }>
+) => {
+  const asset = node?.reference?.data as ContentfulImageQuery;
+  const type = asset?.file?.contentType;
+  console.log(asset, type);
+  return Component ? (
+    <Component asset={asset} contentType={type} />
+  ) : type.match("image") ? (
+    <WmkImage image={new Img(asset)} />
+  ) : type.match("video") && asset?.file?.url ? (
+    <ReactPlayer url={asset.file.url} />
+  ) : (
+    <NullComp>
+      <>{console.log(`error with type: ${type}`)}</>
+    </NullComp>
+  );
+};
+
+export const options = getRichTextOptions({
   renderNode: {
-    [BLOCKS.EMBEDDED_ASSET]: (node: RichTextNode) => {
-      const image = node?.reference?.data as ContentfulImageQuery;
-      const title = image.title;
-      const type = image?.file?.contentType;
-      const url = image?.file?.url;
-      return !type ? (
-        <NullComp />
-      ) : type.match(`image`) ? (
-        <WmkImage
-          image={new Img({ ...image })}
-          style={{ margin: "0 0 2vh 0" }}
-        />
-      ) : type.match(`video`) ? (
-        <ReactPlayer url={url} controls />
-      ) : url ? (
-        <WmkLink to={url} target="_blank">
-          {title}
-        </WmkLink>
-      ) : (
-        <NullComp />
-      );
-    },
-    [INLINES.ASSET_HYPERLINK]: (
-      node: RichTextInline,
-      children: React.ReactNode
-    ) => {
-      const asset = node.reference?.data as ContentfulImageQuery;
-      const url = asset.file?.url;
-      return url ? (
-        <WmkLink to={url} target="blank">
-          {Array.isArray(children) ? children.join(" ") : children}
-        </WmkLink>
-      ) : (
-        <NullComp />
-      );
-    },
-    [BLOCKS.PARAGRAPH]: (node: RichTextNode, children: React.ReactNode) => {
-      console.log(node);
-      return <Typography.P>{children as React.ReactNode}</Typography.P>;
-    },
+    [BLOCKS.EMBEDDED_ASSET]: blocksEmbeddedAssetTest,
+    [BLOCKS.PARAGRAPH]: (node: RichTextNode, children: React.ReactNode) =>
+      blocksTypography(node, children, { Wrapper: Typography.P }),
     [BLOCKS.EMBEDDED_ENTRY]: (node: RichTextNode) => {
       const entry = new EmbeddedBlock(node, blockHash);
       return entry.render();
     },
-    [BLOCKS.HEADING_1]: (node: RichTextNode, children: React.ReactNode) => {
-      console.log(node);
-      return (
-        <Fade direction="up">
-          <Typography.H1>{children as React.ReactNode}</Typography.H1>
-        </Fade>
-      );
-    },
+    [BLOCKS.HEADING_1]: (node: RichTextNode, children: RichTextChildren) =>
+      blocksTypography(node, children, {
+        Wrapper: Fade,
+        Component: Typography.H1
+      }),
     [BLOCKS.HEADING_2]: (node: RichTextNode, children: React.ReactNode) => {
       console.log(node);
       return (
@@ -105,4 +96,4 @@ export const options = {
       );
     }
   }
-};
+});
